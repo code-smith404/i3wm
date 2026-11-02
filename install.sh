@@ -6,20 +6,20 @@ BRANCH="main"
 TMPDIR="$(mktemp -d)"
 trap 'rm -rf "$TMPDIR"' EXIT
 
-# If not run from a cloned repo, fetch it
-if [ ! -f "$(dirname "${BASH_SOURCE[0]}")/.config/i3/config" ]; then
+script_path="${BASH_SOURCE[0]:-}"
+if [ -n "$script_path" ] && [ -f "$(dirname "$script_path")/.config/i3/config" ]; then
+    SRC="$(cd "$(dirname "$script_path")" && pwd)"
+else
     echo "==> Downloading $REPO..."
     curl -fsSL "https://github.com/$REPO/archive/refs/heads/$BRANCH.tar.gz" | tar -xz -C "$TMPDIR"
     SRC="$TMPDIR/i3wm-$BRANCH"
-else
-    SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 fi
+
 CONFIG_DIR="${HOME}/.config"
 BACKUP_DIR="${HOME}/.config/i3wm-backup-$(date +%s)"
 
 echo "==> Installing i3wm beautiful setup"
 
-# Backup existing configs
 if [ -d "${CONFIG_DIR}/i3" ] || [ -d "${CONFIG_DIR}/polybar" ]; then
     echo "==> Backing up existing configs to ${BACKUP_DIR}"
     mkdir -p "${BACKUP_DIR}"
@@ -30,18 +30,15 @@ if [ -d "${CONFIG_DIR}/i3" ] || [ -d "${CONFIG_DIR}/polybar" ]; then
     [ -d "${CONFIG_DIR}/dunst" ] && cp -r "${CONFIG_DIR}/dunst" "${BACKUP_DIR}/"
 fi
 
-# Copy configs
 mkdir -p "${CONFIG_DIR}"
 cp -r "${SRC}/.config/"* "${CONFIG_DIR}/"
 cp "${SRC}/.Xresources" "${HOME}/.Xresources"
 
-# Ensure wallpaper dir
-mkdir -p "${HOME}/Pictures"
+mkdir -p "${HOME}/Pictures/Wallpapers"
 if [ ! -f "${HOME}/Pictures/wallpaper.jpg" ]; then
-    echo "==> Place your wallpaper at ~/Pictures/wallpaper.jpg"
+    echo "==> Place your wallpaper at ~/Pictures/wallpaper.jpg or ~/Pictures/Wallpapers"
 fi
 
-# Restart running components
 if pgrep -x i3 >/dev/null 2>&1; then
     i3-msg reload >/dev/null 2>&1 || true
     pkill -x polybar 2>/dev/null || true
