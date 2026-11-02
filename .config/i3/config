@@ -145,7 +145,7 @@ bindsym Mod4+Shift+Left move left
 bindsym Mod4+Shift+Right move right
 bindsym Mod4+Shift+Up move up
 bindsym Mod4+Shift+Down move down
-bindsym $mod+Tab focus next
+bindsym $mod+Tab focus right
 bindsym Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh area
 bindsym Mod4+Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh full
 
