@@ -13,12 +13,15 @@ fi
 case "$mode" in
   area) maim -s "$file" ;;
   full) maim "$file" ;;
-  window) maim -i "$(xdotool getactivewindow)" "$file" ;;
+  window)
+    if command -v xdotool >/dev/null 2>&1; then
+      maim -i "$(xdotool getactivewindow)" "$file"
+    else
+      maim "$file"
+    fi
+    ;;
   *) echo "usage: $0 {area|full|window}"; exit 1 ;;
 esac
 
 xclip -selection clipboard -t image/png < "$file"
 notify-send "Screenshot" "Copied to clipboard: $file" 2>/dev/null || true
-EOF
-mkdir -p /workspace/app/.config/i3/scripts && mv /tmp/scratchpad 2>/dev/null || true
-chmod +x /workspace/app/.config/i3/scripts/screenshot.sh 2>/dev/null || true
