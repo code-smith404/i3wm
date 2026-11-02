@@ -73,7 +73,16 @@ i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font, Papiru
 
 See [preview.md](preview.md) for details.
 
-## New packages
+## Polybar themes (optional)
+
+To use [Murzchnvok/polybar-collection](https://github.com/Murzchnvok/polybar-collection):
+
+```bash
+git clone --depth=1 https://github.com/Murzchnvok/polybar-collection ~/polybar-collection
+echo 'POLYBAR_COLLECTION=$HOME/polybar-collection' | sudo tee -a /etc/environment
+```
+
+Then set `include-file`/`include-directory` in polybar config to desired theme and colorscheme.
 
 playerctl, brightnessctl, cava, ncmpcpp, mpd, alacritty, polybar, picom, rofi, dunst, feh, JetBrainsMono Nerd Font, Papirus icons.
 
