@@ -29,7 +29,7 @@ cd i3wm
 
 ## Dependencies
 
-i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font, Papirus icons.
+i3, polybar, picom, rofi, dunst, feh, st, JetBrainsMono Nerd Font, Papirus icons.
 
 ## Keybindings (mangoWM-style)
 
@@ -78,9 +78,9 @@ echo 'POLYBAR_COLLECTION=$HOME/polybar-collection' | sudo tee -a /etc/environmen
 
 Then set `include-file`/`include-directory` in polybar config to desired theme and colorscheme.
 
-playerctl, brightnessctl, cava, ncmpcpp, mpd, alacritty, polybar, picom, rofi, dunst, feh, JetBrainsMono Nerd Font, Papirus icons.
+playerctl, brightnessctl, cava, ncmpcpp, mpd, st, polybar, picom, rofi, dunst, feh, JetBrainsMono Nerd Font, Papirus icons.
 
 ## Floating widgets
 
-- Cava: `alacritty --title cava -e cava`
-- Music: `alacritty --title ncmpcpp -e ncmpcpp`
+- Cava: `st --title cava -e cava`
+- Music: `st --title ncmpcpp -e ncmpcpp`

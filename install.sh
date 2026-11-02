@@ -51,4 +51,4 @@ if pgrep -x i3 >/dev/null 2>&1; then
 fi
 
 echo "==> Done."
-echo "==> Dependencies: i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font"
+echo "==> Dependencies: i3, polybar, picom, rofi, dunst, feh, st, JetBrainsMono Nerd Font"
