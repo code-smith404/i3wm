@@ -8,45 +8,29 @@ font pango:JetBrains Mono Nerd Font 10
 # Terminal
 set $terminal alacritty
 
-# Colors (Catppuccin Mocha)
-set $rosewater #f5e0dc
-set $flamingo  #f2cdcd
-set $pink      #f5c2e7
-set $mauve     #cba6f7
-set $red       #f38ba8
-set $maroon    #eba0ac
-set $peach     #fab387
-set $yellow    #f9e2af
-set $green     #a6e3a1
-set $teal      #94e2d5
-set $sky       #89dceb
-set $sapphire  #74c7ec
-set $blue      #89b4fa
-set $lavender  #b4befe
-set $text      #cdd6f4
-set $subtext1  #bac2de
-set $subtext0  #a6adc8
-set $overlay2  #9399b2
-set $overlay1  #7f849c
-set $overlay0  #6c7086
-set $surface2  #585b70
-set $surface1  #45475a
-set $surface0  #313244
-set $base      #1e1e2e
-set $mantle    #181825
-set $crust     #11111b
+# Colors (Tokyo Night)
+set $bg        #1a1b26
+set $bg_dark   #16161e
+set $bg_float  #24283b
+set $fg        #c0caf5
+set $fg_dark   #a9b1d6
+set $blue      #7aa2f7
+set $cyan      #7dcfff
+set $green     #9ece6a
+set $magenta   #bb9af7
+set $red       #f7768e
+set $yellow    #e0af68
+set $comment   #565f89
 
-# Window colors
-client.focused          $mauve $base $text $mauve $mauve
-client.focused_inactive $surface1 $base $subtext0 $surface1 $surface1
-client.unfocused        $surface0 $base $subtext0 $surface0 $surface0
-client.urgent           $red $base $red $red $red
-client.placeholder      $base $base $text $base $base
-client.background       $base
+client.focused          $magenta $bg $fg $magenta $magenta
+client.focused_inactive $bg_float $bg $fg_dark $bg_float $bg_float
+client.unfocused        $bg_dark $bg $comment $bg_dark $bg_dark
+client.urgent           $red $bg $red $red $red
+client.placeholder      $bg $bg $fg $bg $bg
+client.background       $bg
 
-# Gaps
-gaps inner 12
-gaps outer 6
+gaps inner 16
+gaps outer 8
 smart_gaps on
 smart_borders on
 
@@ -166,7 +150,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id polybar main
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id xsetroot -solid "$base"
+exec_always --no-startup-id xsetroot -solid "$bg"
 
 # Floating rules
 for_window [class="Pavucontrol"] floating enable
