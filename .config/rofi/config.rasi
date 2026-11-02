@@ -10,7 +10,6 @@ configuration {
     display-window: "Windows";
 }
 
-@theme "catppuccin-mocha"
 
 * {
     font: "JetBrainsMono Nerd Font 11";
