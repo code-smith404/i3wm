@@ -84,3 +84,16 @@ playerctl, brightnessctl, cava, ncmpcpp, mpd, st, polybar, picom, rofi, dunst, f
 
 - Cava: `st --title cava -e cava`
 - Music: `st --title ncmpcpp -e ncmpcpp`
+
+## Performance notes
+
+- Check picom load: `top`/`htop` (picom CPU) and `glxinfo`/`intel_gpu_top`.
+- If lag: lower blur strength (3→2), disable shadows, turn off vsync, or switch backend to xrender (fallback config).
+- Keep gaps small and disable animations.
+
+## Troubleshooting
+
+- Tearing: enable vsync in picom; use glx backend.
+- Picom crash: run `picom --config ~/.config/picom/picom.conf -b --log-level debug`.
+- Blur not showing: ensure backend glx and blur-method dual_kawase supported.
+- Polybar flicker: restart polybar; check `wm-restack = i3`.
