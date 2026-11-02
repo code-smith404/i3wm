@@ -34,23 +34,23 @@ i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font, Papiru
 ## Keybindings (mangoWM-style)
 
 **General**
-- `Alt+Return` — terminal
-- `Alt+Space` — app launcher (Rofi)
-- `Alt+Q` — kill window
+- `Super+Return` — terminal
+- `Super+Space` — app launcher (Rofi)
+- `Super+Q` — kill window
 - `Super+M` — exit i3
 - `Super+F` — fullscreen
 - `Super+R` — reload config
 
 **Focus**
-- `Alt+Arrows` — focus
+- `Super+Arrows` — focus
 
 **Workspaces**
 - `Ctrl+1..9` — switch workspace
-- `Alt+1..9` — move window to workspace
+- `Super+1..9` — move window to workspace
 
 **Move**
 - `Super+Shift+Arrows` — move window
-- `Alt+Tab` — focus next
+- `Super+Tab` — focus next
 
 **Media/Brightness**
 - Standard XF86 keys
