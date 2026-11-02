@@ -31,39 +31,33 @@ cd i3wm
 
 i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font, Papirus icons.
 
-## Keybindings (by category)
+## Keybindings (mangoWM-style)
 
 **General**
-- `Mod+Return` — terminal (Alacritty)
-- `Mod+d` — app launcher (Rofi)
-- `Mod+Shift+q` — kill window
-- `Mod+Shift+c` — reload config
-- `Mod+Shift+r` — restart i3
-- `Mod+Shift+e` — exit i3
+- `Alt+Return` — terminal
+- `Alt+Space` — app launcher (Rofi)
+- `Alt+Q` — kill window
+- `Super+M` — exit i3
+- `Super+F` — fullscreen
+- `Super+R` — reload config
 
-**Focus / Move**
-- `Mod+j/k/l/;` + arrows — focus
-- `Mod+Shift+j/k/l/;` + arrows — move window
-
-**Layout**
-- `Mod+h` — split horizontal
-- `Mod+v` — split vertical
-- `Mod+f` — fullscreen
-- `Mod+s` — stacking
-- `Mod+w` — tabbed
-- `Mod+e` — toggle split
-- `Mod+Shift+space` — toggle floating
-- `Mod+space` — focus mode toggle
-- `Mod+a` — focus parent
-- `Mod+r` — resize mode
+**Focus**
+- `Alt+Arrows` — focus
 
 **Workspaces**
-- `Mod+1..0` — switch workspace
-- `Mod+Shift+1..0` — move window to workspace
+- `Ctrl+1..9` — switch workspace
+- `Alt+1..9` — move window to workspace
+
+**Move**
+- `Super+Shift+Arrows` — move window
+- `Alt+Tab` — focus next
+
+**Media/Brightness**
+- Standard XF86 keys
 
 **Screenshots**
-- `Print` — area screenshot to clipboard (flameshot)
-- `Mod+Print` — full screenshot to clipboard (flameshot)
+- `Print` — area to clipboard
+- `Super+Print` — full to clipboard
 
 **Resize mode**
 - `j/k/l/;` or arrows — resize

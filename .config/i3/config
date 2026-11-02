@@ -58,57 +58,27 @@ default_floating_border pixel 2
 floating_modifier $mod
 
 # Start a terminal
-bindsym $mod+Return exec $terminal
 
 # Scratchpad terminal
-bindsym $mod+Shift+Return exec --no-startup-id $terminal --title scratchpad
-bindsym $mod+minus scratchpad show
 
 # Kill focused window
-bindsym $mod+Shift+q kill
 
 # Start rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 
 
 # Change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
 
 # Move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # Split orientation
-bindsym $mod+h split h
-bindsym $mod+v split v
 
 # Fullscreen
-bindsym $mod+f fullscreen toggle
 
 # Layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
 
 # Focus parent
-bindsym $mod+a focus parent
 
 # Workspaces (Nerd Font icons)
 set $ws1 "1: "
@@ -122,51 +92,64 @@ set $ws8 "8: "
 set $ws9 "9: "
 set $ws10 "10: "
 
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
 
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Reload / restart
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
 
 # Exit
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
 
 # Resize mode
-mode "resize" {
-    bindsym j resize shrink width 10 px or 10 ppt
-    bindsym k resize grow height 10 px or 10 ppt
-    bindsym l resize shrink height 10 px or 10 ppt
-    bindsym semicolon resize grow width 10 px or 10 ppt
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
-}
-bindsym $mod+r mode "resize"
 
 # Audio
+
+# Brightness
+
+# Scratchpad
+
+# Lock
+
+# Screenshot wrapper
+
+# mangoWM-style keybinds
+set $mod Mod1
+
+bindsym $mod+Return exec $terminal
+bindsym $mod+space exec --no-startup-id rofi -show drun -show-icons
+bindsym $mod+q kill
+bindsym Mod4+m exec "i3-nagbar -t warning -m 'Exit i3?' -B 'Yes' 'i3-msg exit'"
+bindsym Mod4+f fullscreen toggle
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym Ctrl+1 workspace 1
+bindsym Ctrl+2 workspace 2
+bindsym Ctrl+3 workspace 3
+bindsym Ctrl+4 workspace 4
+bindsym Ctrl+5 workspace 5
+bindsym Ctrl+6 workspace 6
+bindsym Ctrl+7 workspace 7
+bindsym Ctrl+8 workspace 8
+bindsym Ctrl+9 workspace 9
+bindsym $mod+1 move container to workspace 1
+bindsym $mod+2 move container to workspace 2
+bindsym $mod+3 move container to workspace 3
+bindsym $mod+4 move container to workspace 4
+bindsym $mod+5 move container to workspace 5
+bindsym $mod+6 move container to workspace 6
+bindsym $mod+7 move container to workspace 7
+bindsym $mod+8 move container to workspace 8
+bindsym $mod+9 move container to workspace 9
+bindsym Mod4+r reload
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Right move right
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Down move down
+bindsym $mod+Tab focus next
+bindsym Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh area
+bindsym Mod4+Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh full
+
+# Media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -174,21 +157,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
-
-# Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
-
-# Scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Lock
-bindsym $mod+Ctrl+l exec --no-startup-id i3lock -c 1a1b26
-
-# Screenshot wrapper
-bindsym Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh area
-bindsym $mod+Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh full
-bindsym $mod+Shift+Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh window
 
 # Autostart
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
