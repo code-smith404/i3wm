@@ -6,7 +6,7 @@ set $mod Mod4
 font pango:JetBrains Mono Nerd Font 10
 
 # Terminal
-set $terminal foot
+set $terminal st
 
 # Colors (Catppuccin Mocha)
 set $rosewater #f5e0dc
@@ -45,13 +45,13 @@ client.placeholder      $base $base $text $base $base
 client.background       $base
 
 # Gaps
-gaps inner 12
-gaps outer 6
+gaps inner 8
+gaps outer 4
 smart_gaps on
 smart_borders on
 
 # Borders
-default_border pixel 2
+default_border pixel 1
 default_floating_border pixel 2
 
 # Use Mouse+$mod to drag floating windows
@@ -162,6 +162,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # Wallpaper picker
 bindsym $mod+Shift+w exec --no-startup-id ~/.config/i3/scripts/wallpaper.sh
+# Picom toggle
+bindsym $mod+Shift+p exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id polybar main
 exec --no-startup-id dunst
@@ -173,6 +175,6 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Nm-connection-editor"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
-for_window [class="Alacritty" title="cava"] floating enable, resize set 400 200, move position 860 60
-for_window [class="Alacritty" title="ncmpcpp"] floating enable, resize set 420 320, move position 840 380
-for_window [class="Alacritty" title="scratchpad"] floating enable, sticky enable, scratchpad show
+for_window [class="st" title="cava"] floating enable, resize set 400 200, move position 860 60
+for_window [class="st" title="ncmpcpp"] floating enable, resize set 420 320, move position 840 380
+for_window [class="st" title="scratchpad"] floating enable, sticky enable, scratchpad show
