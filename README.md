@@ -44,3 +44,12 @@ i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font, Papiru
 ![Preview](preview.svg)
 
 See [preview.md](preview.md) for details.
+
+## New packages
+
+playerctl, brightnessctl, cava, ncmpcpp, mpd, alacritty, polybar, picom, rofi, dunst, feh, JetBrainsMono Nerd Font, Papirus icons.
+
+## Floating widgets
+
+- Cava: `alacritty --title cava -e cava`
+- Music: `alacritty --title ncmpcpp -e ncmpcpp`
