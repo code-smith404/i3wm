@@ -66,6 +66,11 @@ bindsym $mod+Shift+q kill
 # Start rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun -show-icons
 
+# Screenshot (maim + xclip wrapper, see ~/.config/polybar/scripts/screenshot.sh)
+bindsym Print exec --no-startup-id ~/.config/polybar/scripts/screenshot.sh select
+bindsym $mod+Print exec --no-startup-id ~/.config/polybar/scripts/screenshot.sh full
+bindsym $mod+Shift+Print exec --no-startup-id ~/.config/polybar/scripts/screenshot.sh window
+
 # Change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
@@ -105,17 +110,17 @@ bindsym $mod+space focus mode_toggle
 # Focus parent
 bindsym $mod+a focus parent
 
-# Workspaces
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+# Workspaces (Nerd Font icons)
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+set $ws9 "9: "
+set $ws10 "10: "
 
 bindsym $mod+1 workspace number $ws1
 bindsym $mod+2 workspace number $ws2
@@ -160,6 +165,30 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# Audio
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
+
+# Brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# Scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+# Lock
+bindsym $mod+Ctrl+l exec --no-startup-id i3lock -c 1a1b26
+
+# Screenshot wrapper
+bindsym Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh area
+bindsym $mod+Print exec --no-startup-id ~/.config/i3/scripts/screenshot.sh full
 
 # Autostart
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
