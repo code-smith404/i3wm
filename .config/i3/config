@@ -6,7 +6,7 @@ set $mod Mod4
 font pango:JetBrains Mono Nerd Font 10
 
 # Terminal
-set $terminal alacritty
+set $terminal foot
 
 # Colors (Catppuccin Mocha)
 set $rosewater #f5e0dc
