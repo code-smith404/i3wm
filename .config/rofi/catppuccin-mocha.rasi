@@ -1,0 +1,10 @@
+* {
+    background-color: #1e1e2e;
+    text-color: #cdd6f4;
+    border-color: #cba6f7;
+    selected-background: #cba6f7;
+    selected-text-color: #1e1e2e;
+    font: "JetBrainsMono Nerd Font 11";
+}
+window { border-radius: 12px; }
+element selected { background-color: #cba6f7; text-color: #1e1e2e; }

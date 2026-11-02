@@ -1,3 +1,5 @@
+@theme "catppuccin-mocha"
+
 configuration {
     modi: "drun,run,window";
     show-icons: true;
