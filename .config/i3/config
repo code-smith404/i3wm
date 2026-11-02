@@ -160,11 +160,12 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-# Autostart
+# Wallpaper picker
+bindsym Mod4+Shift+w exec --no-startup-id ~/.config/i3/scripts/wallpaper.sh
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id polybar main
 exec --no-startup-id dunst
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec --no-startup-id bash -c 'if [ -f ~/.config/i3/.wallpaper ]; then feh --bg-fill "$(cat ~/.config/i3/.wallpaper)"; else feh --bg-fill ~/Pictures/wallpaper.jpg; fi'
 exec_always --no-startup-id xsetroot -solid "$bg"
 
 # Floating rules
