@@ -41,5 +41,14 @@ if [ ! -f "${HOME}/Pictures/wallpaper.jpg" ]; then
     echo "==> Place your wallpaper at ~/Pictures/wallpaper.jpg"
 fi
 
-echo "==> Done. Reload i3 with Mod+Shift+r"
+# Restart running components
+if pgrep -x i3 >/dev/null 2>&1; then
+    i3-msg reload >/dev/null 2>&1 || true
+    pkill -x polybar 2>/dev/null || true
+    polybar main >/dev/null 2>&1 &
+    pkill -x picom 2>/dev/null || true
+    picom --config "${HOME}/.config/picom/picom.conf" -b >/dev/null 2>&1 || true
+fi
+
+echo "==> Done."
 echo "==> Dependencies: i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font"
