@@ -196,7 +196,7 @@ exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id polybar main
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
-exec_always --no-startup-id xsetroot -solid "$base"
+exec_always --no-startup-id xsetroot -solid "$bg"
 
 # Floating rules
 for_window [class="Pavucontrol"] floating enable
