@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#1e1e2e"/>
+  <!-- top bar -->
+  <rect x="0" y="0" width="1280" height="32" fill="#181825"/>
+  <text x="16" y="21" font-family="monospace" font-size="13" fill="#cba6f7">1  2  3  4  5</text>
+  <text x="420" y="21" font-family="monospace" font-size="13" fill="#cdd6f4">i3wm — Beautiful Setup</text>
+  <text x="980" y="21" font-family="monospace" font-size="13" fill="#cba6f7">Vol 80%  RAM 34%  CPU 12%  WiFi  14:32</text>
+  <!-- window 1 -->
+  <rect x="24" y="56" width="600" height="320" rx="10" fill="#313244" stroke="#cba6f7" stroke-width="2"/>
+  <rect x="24" y="56" width="600" height="28" rx="10" fill="#45475a"/>
+  <text x="40" y="75" font-family="monospace" font-size="12" fill="#cdd6f4">terminal</text>
+  <text x="40" y="110" font-family="monospace" font-size="12" fill="#a6e3a1">$ neofetch</text>
+  <text x="40" y="130" font-family="monospace" font-size="12" fill="#89b4fa">OS: Arch Linux</text>
+  <text x="40" y="150" font-family="monospace" font-size="12" fill="#89b4fa">WM: i3</text>
+  <text x="40" y="170" font-family="monospace" font-size="12" fill="#89b4fa">Theme: Catppuccin Mocha</text>
+  <!-- window 2 -->
+  <rect x="648" y="56" width="608" height="320" rx="10" fill="#313244" stroke="#585b70" stroke-width="2"/>
+  <rect x="648" y="56" width="608" height="28" rx="10" fill="#45475a"/>
+  <text x="664" y="75" font-family="monospace" font-size="12" fill="#cdd6f4">editor</text>
+  <rect x="664" y="96" width="576" height="264" fill="#1e1e2e"/>
+  <text x="680" y="120" font-family="monospace" font-size="12" fill="#cdd6f4">def main():</text>
+  <text x="680" y="140" font-family="monospace" font-size="12" fill="#cdd6f4">    print("hello i3")</text>
+  <!-- window 3 -->
+  <rect x="24" y="400" width="1232" height="288" rx="10" fill="#313244" stroke="#585b70" stroke-width="2"/>
+  <rect x="24" y="400" width="1232" height="28" rx="10" fill="#45475a"/>
+  <text x="40" y="419" font-family="monospace" font-size="12" fill="#cdd6f4">browser</text>
+  <rect x="40" y="440" width="1200" height="232" fill="#181825"/>
+  <text x="600" y="560" font-family="monospace" font-size="20" fill="#cba6f7" text-anchor="middle">i3wm setup preview</text>
+</svg>
