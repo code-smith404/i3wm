@@ -28,3 +28,12 @@ cp .Xresources ~/
 - `Mod+Shift+q` — kill
 - `Mod+1..0` — workspaces
 - `Mod+Shift+e` — exit
+
+## New packages
+
+playerctl, brightnessctl, cava, ncmpcpp, mpd, alacritty, polybar, picom, rofi, dunst, feh, JetBrainsMono Nerd Font, Papirus icons.
+
+## Floating widgets
+
+- Cava: `alacritty --title cava -e cava`
+- Music: `alacritty --title ncmpcpp -e ncmpcpp`
