@@ -166,12 +166,29 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Cava visualizer (floating)
+for_window [class="Alacritty" instance="cava"] floating enable
+for_window [class="Alacritty" instance="cava"] border pixel 0
+for_window [class="Alacritty" instance="cava"] sticky enable
+for_window [class="Alacritty" instance="cava"] resize set 420 160
+for_window [class="Alacritty" instance="cava"] move position 1500 880
+
+# Music panel (ncmpcpp)
+for_window [class="Alacritty" instance="ncmpcpp"] floating enable
+for_window [class="Alacritty" instance="ncmpcpp"] border pixel 0
+for_window [class="Alacritty" instance="ncmpcpp"] sticky enable
+for_window [class="Alacritty" instance="ncmpcpp"] resize set 520 220
+for_window [class="Alacritty" instance="ncmpcpp"] move position 1380 840
+
 # Autostart
 exec --no-startup-id picom --config ~/.config/picom/picom.conf -b
 exec --no-startup-id polybar main
 exec --no-startup-id dunst
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 exec_always --no-startup-id xsetroot -solid "$bg"
+exec_always --no-startup-id mpd
+exec_always --no-startup-id alacritty --class cava,cava -e cava
+exec_always --no-startup-id alacritty --class ncmpcpp,ncmpcpp -e ncmpcpp
 
 # Floating rules
 for_window [class="Pavucontrol"] floating enable
