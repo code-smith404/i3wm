@@ -31,15 +31,43 @@ cd i3wm
 
 i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font, Papirus icons.
 
-## Keybindings
+## Keybindings (by category)
 
-- `Mod+Return` — terminal
-- `Mod+d` — app launcher
+**General**
+- `Mod+Return` — terminal (Alacritty)
+- `Mod+d` — app launcher (Rofi)
 - `Mod+Shift+q` — kill window
-- `Mod+1..0` — workspaces
+- `Mod+Shift+c` — reload config
+- `Mod+Shift+r` — restart i3
+- `Mod+Shift+e` — exit i3
+
+**Focus / Move**
+- `Mod+j/k/l/;` + arrows — focus
+- `Mod+Shift+j/k/l/;` + arrows — move window
+
+**Layout**
+- `Mod+h` — split horizontal
+- `Mod+v` — split vertical
 - `Mod+f` — fullscreen
+- `Mod+s` — stacking
+- `Mod+w` — tabbed
+- `Mod+e` — toggle split
+- `Mod+Shift+space` — toggle floating
+- `Mod+space` — focus mode toggle
+- `Mod+a` — focus parent
 - `Mod+r` — resize mode
-- `Mod+Shift+e` — exit
+
+**Workspaces**
+- `Mod+1..0` — switch workspace
+- `Mod+Shift+1..0` — move window to workspace
+
+**Screenshots**
+- `Print` — area screenshot to clipboard (flameshot)
+- `Mod+Print` — full screenshot to clipboard (flameshot)
+
+**Resize mode**
+- `j/k/l/;` or arrows — resize
+- `Enter/Esc` — exit mode
 
 ![Preview](preview.svg)
 
