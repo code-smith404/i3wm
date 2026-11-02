@@ -1,7 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO="code-smith404/i3wm"
+BRANCH="main"
+TMPDIR="$(mktemp -d)"
+trap 'rm -rf "$TMPDIR"' EXIT
+
+# If not run from a cloned repo, fetch it
+if [ ! -f "$(dirname "${BASH_SOURCE[0]}")/.config/i3/config" ]; then
+    echo "==> Downloading $REPO..."
+    curl -fsSL "https://github.com/$REPO/archive/refs/heads/$BRANCH.tar.gz" | tar -xz -C "$TMPDIR"
+    SRC="$TMPDIR/i3wm-$BRANCH"
+else
+    SRC="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+fi
 CONFIG_DIR="${HOME}/.config"
 BACKUP_DIR="${HOME}/.config/i3wm-backup-$(date +%s)"
 

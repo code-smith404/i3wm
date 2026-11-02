@@ -13,7 +13,13 @@ A curated, modern i3wm desktop configuration.
 - `dunst` notifications
 - `.Xresources` color scheme
 
-## Install
+## Install (no clone needed)
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/code-smith404/i3wm/main/install.sh)"
+```
+
+## Install (clone)
 
 ```bash
 git clone https://github.com/code-smith404/i3wm.git
