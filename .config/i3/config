@@ -38,6 +38,10 @@ smart_borders on
 default_border pixel 2
 default_floating_border pixel 2
 
+# Titlebars
+for_window [class=".*"] title_format "%title"
+hide_edge_borders both
+
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
