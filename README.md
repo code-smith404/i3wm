@@ -35,4 +35,6 @@ i3, polybar, picom, rofi, dunst, feh, alacritty, JetBrainsMono Nerd Font, Papiru
 - `Mod+r` — resize mode
 - `Mod+Shift+e` — exit
 
-See [preview.md](preview.md) for a visual overview.
+![Preview](preview.svg)
+
+See [preview.md](preview.md) for details.
